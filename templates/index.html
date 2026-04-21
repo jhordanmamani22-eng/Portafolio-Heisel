@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Heisel N. Mariño</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <div class="container">
+            <span class="navbar-brand">Portafolio Profesional</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card shadow-sm p-4 mb-4">
+            <h1>Heisel N. Mariño Peralta</h1>
+            <p class="text-secondary">
+                <strong>C.I:</strong> 13373471 | <strong>R.U:</strong> 200047794<br>
+                Estudiante de Ingeniería de Sistemas - UPEA
+            </p>
+        </div>
+
+        <h3>Habilidades Principales</h3>
+        <div class="mb-4">
+            {% for h in habilidades %}
+            <span class="badge bg-primary fs-6">{{ h }}</span>
+            {% endfor %}
+        </div>
+
+        <h3>Mis Proyectos</h3>
+        <div class="row">
+            {% for p in proyectos %}
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">{{ p.nombre }}</h5>
+                        <p class="card-text">{{ p.desc }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="/contacto" class="btn btn-lg btn-success">Contactar ahora</a>
+        </div>
+    </div>
+</body>
+</html>
